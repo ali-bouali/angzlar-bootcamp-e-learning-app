@@ -1,16 +1,16 @@
 <div class="container-fluid card login-container">
   <h3 class="text-center">Login</h3>
   <hr>
-  <div class="alert alert-danger" role="alert">
-    <p >error here</p>
+  <div class="alert alert-danger" role="alert" *ngIf="errorMsg.length">
+    <p *ngFor="let msg of errorMsg">{{msg}}</p>
   </div>
   <div class="mb-3">
     <label for="login" class="form-label">Email address</label>
-    <input  type="email" class="form-control" id="login" placeholder="name@example.com">
+    <input [(ngModel)]="authRequest.email"  type="email" class="form-control" id="login" placeholder="name@example.com">
   </div>
   <div class="mb-3">
     <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password">
+    <input [(ngModel)]="authRequest.password" type="password" class="form-control" id="password" placeholder="Password">
   </div>
   <div class="d-flex justify-content-between mb-3">
     <button (click)="login()" type="button" class="btn btn-primary">
