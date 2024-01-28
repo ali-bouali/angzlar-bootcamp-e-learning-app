@@ -12,6 +12,14 @@ export class MainComponent {
     {
       label: 'Home',
       url: 'home'
+    },
+    {
+      label: 'Subjects',
+      url: 'subjects'
+    },
+    {
+      label: 'My subscription',
+      url: 'subscriptions'
     }
   ]
 }
