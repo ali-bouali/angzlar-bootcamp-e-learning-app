@@ -3,15 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import {RegisterRequest} from '../../models/register-request';
 import {AuthRequest} from '../../models/auth-request';
 import {AuthResponse} from '../../models/auth-response';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  baseUrl = 'http://localhost:8080';
-  // eyJhbGciOiJIUzUxMiJ9.eyJmaXJzdG5hbWUiOiJBbGkiLCJzdWIiOiJhbGlAbWFpbC5jb20iLCJpYXQiOjE3MDY0NzEwNzksImV4cCI6MTcwNjU1NzQ3OX0.AuSdBk5O9je-75Ywyk8wLV2DllZCuYY-1gplU39NHUOJaLKuomsZT4Y7YoqoIdO1vOn_uQKseVE54EkLn-ZuAQ
-
+  baseUrl = environment.app.baseUrl;
   constructor(
     private http: HttpClient
   ) { }
