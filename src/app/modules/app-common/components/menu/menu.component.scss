@@ -1,0 +1,15 @@
+div.menu {
+  // padding: 20px;
+  background-color: aliceblue;
+  display: flex;
+  gap: 10px;
+  > a {
+    text-decoration: none;
+    padding: 10px;
+    &:hover {
+      background-color: cornflowerblue;
+      color: white;
+      border-radius: 5px;
+    }
+  }
+}
