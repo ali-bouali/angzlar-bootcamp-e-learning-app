@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from './pages/login/login.component';
 import {RegisterComponent} from './pages/register/register.component';
 import {authGuard} from './modules/app-common/services/guards/auth/auth.guard';
+import {studentGuard} from './modules/app-common/services/guards/student/student.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
   {
     path: 'student',
     loadChildren: () => import('./modules/student/student.module').then(m => m.StudentModule),
-    canActivate: [authGuard]
+    canActivate: [authGuard, studentGuard]
   }
 ];
 

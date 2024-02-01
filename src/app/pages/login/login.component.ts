@@ -27,7 +27,7 @@ export class LoginComponent {
       .subscribe({
         next: (res) => {
           this.tokenService.token = res.token as string;
-          this.router.navigate(['student']);
+          this.redirectConnectedUser();
         },
         error: (err) => {
           console.log(err);
@@ -38,6 +38,14 @@ export class LoginComponent {
           }
         }
       });
+  }
+
+  private redirectConnectedUser() {
+    if (this.tokenService.isStudent()) {
+      this.router.navigate(['student']);
+    } else if (this.tokenService.isTeacher()) {
+      this.router.navigate(['teacher']);
+    }
   }
 
   register() {

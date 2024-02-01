@@ -35,4 +35,35 @@ export class TokenService {
   isTokenNotValid() {
     return !this.isTokenValid();
   }
+
+  get userRoles(): string[] {
+    const token = this.token;
+    if (token) {
+      const jwtHelper = new JwtHelperService();
+      const decodedToken = jwtHelper.decodeToken(token);
+      console.log(decodedToken.authorities);
+      return decodedToken.authorities;
+    }
+    return [];
+  }
+
+  isStudent() {
+    const roles = this.userRoles;
+    if (!roles.length) {
+      return false;
+    }
+    return roles.includes('ROLE_STUDENT');
+  }
+
+  isNotStudent() {
+    return !this.isStudent();
+  }
+
+  isTeacher() {
+    const roles = this.userRoles;
+    if (!roles.length) {
+      return false;
+    }
+    return roles.includes('ROLE_TEACHER');
+  }
 }
