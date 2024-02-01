@@ -14,12 +14,12 @@ export class MainComponent {
       url: 'home'
     },
     {
-      label: 'Subjects',
+      label: 'My Subjects',
       url: 'subjects'
     },
     {
-      label: 'My subscription',
-      url: 'subscriptions'
+      label: 'My Students',
+      url: 'my-students'
     }
   ];
 }

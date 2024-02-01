@@ -66,4 +66,8 @@ export class TokenService {
     }
     return roles.includes('ROLE_TEACHER');
   }
+
+  isNotTeacher() {
+    return !this.isTeacher();
+  }
 }
