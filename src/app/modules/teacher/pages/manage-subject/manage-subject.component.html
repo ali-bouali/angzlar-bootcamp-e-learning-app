@@ -1,1 +1,18 @@
-<p>manage-subject works!</p>
+<h3>Manage your subject</h3>
+<div class="alert alert-danger" role="alert" *ngIf="errorMsg.length">
+  <p *ngFor="let msg of errorMsg">{{msg}}</p>
+</div>
+<div class="p-2 border">
+  <div class="mb-3">
+    <label for="subjectName" class="form-label">Subject name</label>
+    <input [(ngModel)]="subjectRequest.name" type="text" class="form-control" id="subjectName" placeholder="Subject name">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Subject description</label>
+    <textarea [(ngModel)]="subjectRequest.description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description"></textarea>
+  </div>
+  <div class="d-flex gap-2 justify-content-end">
+    <button (click)="cancel()" class="btn btn-outline-primary">Cancel</button>
+    <button (click)="save()" class="btn btn-danger">Save</button>
+  </div>
+</div>
