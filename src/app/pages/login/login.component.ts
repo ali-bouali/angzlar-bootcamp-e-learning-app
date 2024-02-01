@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../../services/auth/authentication.service';
 import {AuthRequest} from '../../models/auth-request';
+import {TokenService} from '../../modules/app-common/services/token/token.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private tokenService: TokenService
   ) {
   }
 
@@ -24,7 +26,7 @@ export class LoginComponent {
     this.authService.login(this.authRequest)
       .subscribe({
         next: (res) => {
-          localStorage.setItem('token', res.token as string);
+          this.tokenService.token = res.token as string;
           this.router.navigate(['student']);
         },
         error: (err) => {
