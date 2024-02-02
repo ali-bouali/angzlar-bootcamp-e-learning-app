@@ -1,0 +1,10 @@
+span {
+  &:hover {
+    background-color: aquamarine;
+  }
+  &.active-page {
+    background-color: aqua;
+  }
+
+}
+

@@ -7,16 +7,48 @@
 </div>
 <div class="d-flex gap-2 justify-content-center flex-wrap">
   <div
-    *ngFor="let subject of subjects"
+    *ngFor="let subject of subjects.content"
     class="card"
     style="width: 25rem;"
   >
     <div class="card-body">
-      <h5 class="card-title">{{subject.name}}</h5>
+      <h5 class="card-title">{{ subject.name }}</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary">Subject subtitle</h6>
-      <p class="card-text">{{subject.description}}</p>
+      <p class="card-text">{{ subject.description }}</p>
       <a href="javascript:void(0)" [routerLink]="'manage/' + subject.id" class="card-link">Edit</a>
       <a href="javascript:void(0)" class="card-link text-danger">Delete</a>
     </div>
   </div>
+</div>
+<div class="d-flex gap-2 justify-content-center mt-3 align-self-center" *ngIf="pages.length">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li
+        class="page-item"
+        *ngFor="let pageIndex of pages"
+      ><a (click)="gotToPage(pageIndex)" class="page-link" href="javascript:void(0)">{{ pageIndex + 1 }}</a>
+      </li>
+
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!--<div class="d-flex gap-2">
+    <span>Number of elements</span>
+    <select>
+      <option>2</option>
+      <option>4</option>
+      <option>6</option>
+      <option>8</option>
+      <option>10</option>
+    </select>
+  </div>-->
 </div>

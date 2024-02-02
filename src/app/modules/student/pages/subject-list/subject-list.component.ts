@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SubjectService} from '../../../../services/subject/subject.service';
 import {SubjectResponse} from '../../../../models/subject-response';
+import {SubjectPageResponse} from '../../../../models/subject-page-response';
 
 @Component({
   selector: 'app-subject-list',
@@ -8,7 +9,7 @@ import {SubjectResponse} from '../../../../models/subject-response';
   styleUrls: ['./subject-list.component.scss']
 })
 export class SubjectListComponent implements OnInit {
-  subjects: Array<SubjectResponse> = [];
+  subjects: SubjectPageResponse = {};
 
   constructor(
     private subjectService: SubjectService
@@ -19,7 +20,8 @@ export class SubjectListComponent implements OnInit {
     this.subjectService.findAllSubjects()
       .subscribe({
         next: (data) => {
-          this.subjects = data;
+          console.log(data);
+          // this.subjects = data;
         }
       });
   }
