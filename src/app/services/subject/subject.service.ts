@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {SubjectResponse} from '../../models/subject-response';
 import {environment} from '../../../environments/environment';
 import {SubjectRequest} from '../../models/subject-request';
@@ -16,20 +16,14 @@ export class SubjectService {
   ) { }
 
   saveSubject(subject: SubjectRequest) {
-    let header: HttpHeaders = new HttpHeaders();
-    header = header.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
-    return this.http.post<number>(`${this.baseUrl}/subjects`, subject, {headers: header});
+    return this.http.post<number>(`${this.baseUrl}/subjects`, subject);
   }
 
   findAllSubjects() {
-    let header: HttpHeaders = new HttpHeaders();
-    header = header.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
-    return this.http.get<Array<SubjectResponse>>(`${this.baseUrl}/subjects`, {headers: header});
+    return this.http.get<Array<SubjectResponse>>(`${this.baseUrl}/subjects`);
   }
 
   findById(subjectId: number) {
-    let header: HttpHeaders = new HttpHeaders();
-    header = header.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
-    return this.http.get<SubjectResponse>(`${this.baseUrl}/subjects/${subjectId}`, {headers: header});
+    return this.http.get<SubjectResponse>(`${this.baseUrl}/subjects/${subjectId}`);
   }
 }
