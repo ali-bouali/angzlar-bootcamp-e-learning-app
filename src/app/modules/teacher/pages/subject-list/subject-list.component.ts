@@ -13,7 +13,7 @@ export class SubjectListComponent implements OnInit {
   subjects: SubjectPageResponse = {};
   pages: any = [];
   page = 0;
-  size = 2;
+  size = 1;
 
   constructor(
     private subjectService: SubjectService
@@ -40,5 +40,29 @@ export class SubjectListComponent implements OnInit {
   gotToPage(page: number) {
     this.page = page;
     this.findAllSubjects();
+  }
+
+  goToFirstPage() {
+    this.page = 0;
+    this.findAllSubjects();
+  }
+
+  goToPreviousPage() {
+    this.page --;
+    this.findAllSubjects();
+  }
+
+  goToLastPage() {
+    this.page = this.subjects.totalPages as number - 1;
+    this.findAllSubjects();
+  }
+
+  goToNextPage() {
+    this.page++;
+    this.findAllSubjects();
+  }
+
+  get isLastPage() {
+    return this.page === this.subjects.totalPages as number - 1;
   }
 }

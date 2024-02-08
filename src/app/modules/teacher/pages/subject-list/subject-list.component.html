@@ -24,18 +24,53 @@
   <nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
+        <a
+          (click)="goToFirstPage()"
+          class="page-link"
+          [class.disabled]="page === 0"
+          href="javascript:void(0)"
+          aria-label="Previous"
+        >
           <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a
+          (click)="goToPreviousPage()"
+          class="page-link"
+          [class.disabled]="page === 0"
+          href="javascript:void(0)"
+          aria-label="Previous"
+        >
+          <span aria-hidden="true">&lt;</span>
         </a>
       </li>
       <li
         class="page-item"
         *ngFor="let pageIndex of pages"
-      ><a (click)="gotToPage(pageIndex)" class="page-link" href="javascript:void(0)">{{ pageIndex + 1 }}</a>
+      >
+        <a
+          (click)="gotToPage(pageIndex)"
+          class="page-link"
+          [class.active]="page === pageIndex"
+          href="javascript:void(0)"
+        >{{ pageIndex + 1 }}</a>
       </li>
 
       <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
+        <a (click)="goToNextPage()"
+           class="page-link"
+           [class.disabled]="isLastPage"
+           href="javascript:void(0)" aria-label="Next">
+          <span aria-hidden="true">&gt;</span>
+        </a>
+      </li>
+
+      <li class="page-item">
+        <a (click)="goToLastPage()"
+           class="page-link"
+           [class.disabled]="isLastPage"
+           href="javascript:void(0)" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
         </a>
       </li>
