@@ -1,0 +1,14 @@
+<h3>Insert new object</h3>
+<hr>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Name</label>
+  <input [(ngModel)]="simpleForm.name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea [(ngModel)]="simpleForm.body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+<div class="d-flex gap-2 justify-content-end">
+  <button (click)="sendMessage()" type="button" class="btn btn-primary">Save</button>
+  <button type="button" class="btn btn-danger">Cancel</button>
+</div>

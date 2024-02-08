@@ -1,0 +1,19 @@
+<h3>List of inserted objects</h3>
+<hr>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Message</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let msg of simpleFormList; let index=index">
+    <th scope="row">{{ index }}</th>
+    <td>{{msg.name}}</td>
+    <td>{{ msg.body }}</td>
+  </tr>
+  </tbody>
+</table>
+

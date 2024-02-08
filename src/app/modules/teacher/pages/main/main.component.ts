@@ -20,6 +20,10 @@ export class MainComponent {
     {
       label: 'My Students',
       url: 'my-students'
+    },
+    {
+      label: 'My Demo page',
+      url: 'my-demo-page'
     }
   ];
 }

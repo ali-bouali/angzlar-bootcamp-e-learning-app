@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {MainComponent} from './pages/main/main.component';
 import {SubjectListComponent} from './pages/subject-list/subject-list.component';
 import {ManageSubjectComponent} from './pages/manage-subject/manage-subject.component';
+import {DemoPageComponent} from './pages/demo-page/demo-page.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: 'subjects/manage/:subjectId',
         component: ManageSubjectComponent
+      },
+      {
+        path: 'my-demo-page',
+        component: DemoPageComponent
       }
     ]
   }
