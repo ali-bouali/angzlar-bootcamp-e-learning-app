@@ -1,18 +1,18 @@
-<h3>Manage your subject</h3>
+<h3>{{"TEACHER.SUBJECT.MANAGE" | translate}}</h3>
 <div class="alert alert-danger" role="alert" *ngIf="errorMsg.length">
   <p *ngFor="let msg of errorMsg">{{msg}}</p>
 </div>
 <div class="p-2 border">
   <div class="mb-3">
-    <label for="subjectName" class="form-label">Subject name</label>
-    <input [(ngModel)]="subjectRequest.name" type="text" class="form-control" id="subjectName" placeholder="Subject name">
+    <label for="subjectName" class="form-label">{{"TEACHER.SUBJECT.NAME" | translate}}</label>
+    <input [(ngModel)]="subjectRequest.name" type="text" class="form-control" id="subjectName" placeholder="{{'TEACHER.SUBJECT.NAME' | translate}}">
   </div>
   <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Subject description</label>
-    <textarea [(ngModel)]="subjectRequest.description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description"></textarea>
+    <label for="exampleFormControlTextarea1" class="form-label">{{"TEACHER.SUBJECT.DESCRIPTION" | translate}}</label>
+    <textarea [(ngModel)]="subjectRequest.description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="{{'TEACHER.SUBJECT.DESCRIPTION' | translate}}"></textarea>
   </div>
   <div class="d-flex gap-2 justify-content-end">
-    <button (click)="cancel()" class="btn btn-outline-primary">Cancel</button>
-    <button (click)="save()" class="btn btn-danger">Save</button>
+    <button (click)="cancel()" class="btn btn-outline-primary">{{"COMMON.CANCEL" | translate}}</button>
+    <button (click)="save()" class="btn btn-danger">{{"COMMON.SAVE" | translate}}</button>
   </div>
 </div>

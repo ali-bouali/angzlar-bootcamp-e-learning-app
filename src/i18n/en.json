@@ -1,0 +1,27 @@
+{
+  "MENU": {
+    "TEACHER": {
+      "HOME": "Home",
+      "SUBJECTS": "My Courses",
+      "STUDENTS": "My Students"
+    }
+  },
+  "COMMON": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel"
+  },
+  "TEACHER": {
+    "SUBJECT": {
+      "CREATE_SUBJECT": "Create a new course",
+      "EDIT": "Edit",
+      "DELETE": "Delete",
+      "MANAGE": "Manage my courses",
+      "NAME": "Course Name",
+      "DESCRIPTION": "Course Description",
+      "ERRORS": {
+        "100": "Course name is required",
+        "101": "Course description is required"
+      }
+    }
+  }
+}

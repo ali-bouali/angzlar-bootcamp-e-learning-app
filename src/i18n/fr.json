@@ -1,0 +1,27 @@
+{
+  "MENU": {
+    "TEACHER": {
+      "HOME": "Acceuil",
+      "SUBJECTS": "Mes Cours",
+      "STUDENTS": "Mes etudiants"
+    }
+  },
+  "COMMON": {
+    "SAVE": "Enregistrer",
+    "CANCEL": "Annuler"
+  },
+  "TEACHER": {
+    "SUBJECT": {
+      "CREATE_SUBJECT": "Creer un nouveau cours",
+      "EDIT": "Modifier",
+      "DELETE": "Supprimer",
+      "MANAGE": "Gerer mes cours",
+      "NAME": "Nom du cours",
+      "DESCRIPTION": "Description du cours",
+      "ERRORS": {
+        "100": "Il faut saisir le nom du cours",
+        "101": "Il faut saisir la description du cours"
+      }
+    }
+  }
+}

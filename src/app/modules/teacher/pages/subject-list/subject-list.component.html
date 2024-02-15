@@ -3,7 +3,7 @@
     href="javascript:void(0)"
     class="btn btn-outline-primary"
     routerLink="manage"
-  >Create subject</a>
+  >{{"TEACHER.SUBJECT.CREATE_SUBJECT" | translate}}</a>
 </div>
 <div class="d-flex gap-2 justify-content-center flex-wrap">
   <div
@@ -15,8 +15,8 @@
       <h5 class="card-title">{{ subject.name }}</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary">Subject subtitle</h6>
       <p class="card-text">{{ subject.description }}</p>
-      <a href="javascript:void(0)" [routerLink]="'manage/' + subject.id" class="card-link">Edit</a>
-      <a href="javascript:void(0)" class="card-link text-danger">Delete</a>
+      <a href="javascript:void(0)" [routerLink]="'manage/' + subject.id" class="card-link">{{"TEACHER.SUBJECT.EDIT" | translate}}</a>
+      <a href="javascript:void(0)" class="card-link text-danger">{{"TEACHER.SUBJECT.DELETE" | translate}}</a>
     </div>
   </div>
 </div>

@@ -10,20 +10,16 @@ export class MainComponent {
 
   menuItems: MenuItem[] = [
     {
-      label: 'Home',
+      label: 'MENU.TEACHER.HOME',
       url: 'home'
     },
     {
-      label: 'My Subjects',
+      label: 'MENU.TEACHER.SUBJECTS',
       url: 'subjects'
     },
     {
-      label: 'My Students',
+      label: 'MENU.TEACHER.STUDENTS',
       url: 'my-students'
-    },
-    {
-      label: 'My Demo page',
-      url: 'my-demo-page'
     }
   ];
 }
